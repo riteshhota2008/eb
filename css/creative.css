@@ -153,6 +153,9 @@ header {
   background-image: url('../img/2.jpg');/*header.jpg*/
   text-align: center;
   color: white;
+  background-attachment: fixed;
+    /*-webkit-filter: opacity(80%); /* Chrome, Safari, Opera */
+    /*filter: opacity(80%);*/
 }
 header .header-content {
   position: relative;
@@ -341,7 +344,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: #ffffff;
-  background-color: rgba(244, 164, 96, 0.9);/*#ee4b28*/
+  background-color: rgba(244, 164, 96, 0.7);/*#ee4b28*/
   border-color: #db9356;/*#ed431f*/
 }
 .btn-primary:active,
@@ -378,7 +381,7 @@ fieldset[disabled] .btn-primary.active {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   border: 2px solid #f4a460;/*border: none;*/
     background-color: transparent;/*changed*/
-  border-radius: 300px;
+  border-radius: 3px;
   font-weight: 700;
   text-transform: uppercase;
 }
