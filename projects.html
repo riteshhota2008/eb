@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Eb</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<style type="text/css">
+		
+		body {
+	padding-top: 30px;
+}
+.product {
+	margin-bottom: 30px;
+}
+.product-inner {
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+	padding: 10px;
+}
+.product img {
+	margin-bottom: 10px;
+}
+
+	</style>
+</head>
+<body>
+<!--
+<div class="container">
+     <div class="jumbotron" style="background-color: #FFFFFF;border: 1px solid #d3d3d3;margin-top: 50px;">
+          <h1>Search Projects</h1>
+  <!--<p>...</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>-->
+<!--     </div>
+</div> -->
+
+<div class="container">
+	<div class="row" id="search">
+		<form id="search-form" action="" method="POST" enctype="multipart/form-data">
+			<div class="form-group col-xs-9">
+				<input class="form-control" type="text" placeholder="Search" />
+			</div>
+			<div class="form-group col-xs-3">
+				<button type="submit" class="btn btn-block btn-primary">Search</button>
+			</div>
+		</form>
+	</div>
+	<div class="row" id="filter">
+		<form>
+			<div class="form-group col-xs-3">
+				<select data-filter="make" class="filter-make filter form-control">
+					<option value="">Select Make</option>
+					<option value="">Show All</option>
+				</select>
+			</div>
+			<div class="form-group col-xs-3">
+				<select data-filter="model" class="filter-model filter form-control">
+					<option value="">Select Model</option>
+					<option value="">Show All</option>
+				</select>
+			</div>
+			<div class="form-group col-xs-3">
+				<select data-filter="type" class="filter-type filter form-control">
+					<option value="">Select Type</option>
+					<option value="">Show All</option>
+				</select>
+			</div>
+			<div class="form-group col-xs-3">
+				<select data-filter="price" class="filter-price filter form-control">
+					<option value="">Select Price Range</option>
+					<option value="">Show All</option>
+				</select>
+			</div>
+		</form>
+	</div>
+	<div class="row" id="products">
+		
+	</div>
+</div>
+	
+</body>
+</html>
