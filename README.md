@@ -1,4 +1,4 @@
-# eb - get busy
+# eb
 
 https://codepen.io/sdthornton/pen/wBZdXq
 
