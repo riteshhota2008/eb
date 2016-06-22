@@ -1,4 +1,4 @@
-# eb | get busy
+# eb
 
 https://codepen.io/sdthornton/pen/wBZdXq
 
@@ -9,4 +9,5 @@ http://bootsnipp.com/snippets/featured/material-cards
 https://codepen.io/jamesbarnett/pen/vlpkh
 
 http://codepen.io/dope/pen/dGihy
+
 
