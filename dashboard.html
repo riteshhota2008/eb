@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+  	
+	<title>Easily Busy | Dashboard</title>
+    <style>
+        .ux-progress-radial-holder {
+            display: inline-block;
+            margin-left: 50px;
+        }
+
+        /* @bar container */
+        .ux-progress-radial {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            position: relative;
+            background-color: #62BDF1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #fff;
+        }
+
+        /* @optional centered circle with text */
+        .ux-progress-overlay {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 76px;
+            height: 76px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .ux-progress-val {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+    <style>
+
+
+        .rad-info-box {
+            margin-bottom: 16px;
+            box-shadow: 1px 1px 2px 0 #CCCCCC;
+            padding: 20px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+            background: white !important;
+        }
+
+        .rad-info-box i {
+            display: block;
+            background-clip: padding-box;
+            margin-right: 15px;
+            height: 60px;
+            width: 60px;
+            border-radius: 100%;
+            line-height: 60px;
+            text-align: center;
+            font-size: 4.4em;
+            position: absolute;
+        }
+
+        .rad-info-box .value,
+        .rad-info-box .heading {
+            display: block;
+            /*position: relative;*/
+            color: #515d6e;
+            text-align: right;
+            z-index: 10;
+        }
+
+        .rad-info-box .heading {
+            font-size: 1.2em;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        .rad-info-box .value {
+            font-size: 2.1em;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+    </style>
+    <style>
+        @media only screen and (max-width: 768px)	{
+            .divider {
+                display: none;
+            }
+            .ux-progress-radial-holder  {
+                display: none;
+            }
+            .space {
+                margin-top: -50px;
+            }
+        }
+    </style>
+</head>
+<body>
+	<header class="cd-main-header">
+		<a href="#0" class="cd-logo"><img src="img/cd-logo.svg" alt="Logo"></a>
+		
+		<div class="cd-search is-hidden">
+			<form action="#0">
+				<input type="search" placeholder="Search... ">
+			</form>
+		</div> <!-- cd-search -->
+
+		<a href="#0" class="cd-nav-trigger"><!--Menu--><span></span></a>
+
+		<nav class="cd-nav">
+			<ul class="cd-top-nav">
+				<!--<li><a href="#0">Tour</a></li>
+				<li><a href="#0">Support</a></li>-->
+				<li class="has-children account">
+					<a href="#0">
+						<img src="img/cd-avatar.png" alt="avatar">
+						Account
+					</a>
+
+					<ul>
+
+						<li><a href="#0">My Account</a></li>
+						<li><a href="#0">Edit Account</a></li>
+						<li><a href="#0">Logout</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header> <!-- .cd-main-header -->
+
+	<main class="cd-main-content">
+		<nav class="cd-side-nav">
+			<ul>
+				<!--<li class="cd-label">Main</li>-->
+				<li class="has-children overview" style="margin-top: 50px">
+					<a href="#0" class="space">Find Jobs</a>
+					<a href="#0">Saved Jobs</a>
+                    <a href="#0">Proposals</a>
+                    <a href="profile.html">Profile</a>
+                    <a href="#0">My Stats</a>
+                    <a href="#0">Tests</a>
+					
+					<!--<ul>
+						<li><a href="#0">All Data</a></li>
+						<li><a href="#0">Category 1</a></li>
+						<li><a href="#0">Category 2</a></li>
+					</ul>-->
+				</li>
+				<li class="has-children notifications active">
+					<a href="#0">Notifications<span class="count">3</span></a>
+					
+					<!--<ul>
+						<li><a href="#0">All Notifications</a></li>
+						<li><a href="#0">Friends</a></li>
+						<li><a href="#0">Other</a></li>
+					</ul>-->
+				</li>
+
+                <li class="has-children bookmarks">
+
+                <hr class="divider" color="f6f6f6">
+                <a href="#0">Go Premium</a>
+                <a href="#0">Settings</a>
+                <a href="#0">Help</a>
+
+                    <hr class="divider" color="f6f6f6">
+
+
+
+
+
+                <div class="ux-progress-radial-holder">
+                    <div class="ux-progress-radial progress-20 percent-20">
+                        <div class="ux-progress-overlay"><span class="ux-progress-val" style="color:#7e7e7e">75% <br>Complete</span></div>
+                    </div>
+                </div>
+
+                </li>
+
+				<!--<li class="has-children comments">
+					<a href="#0">Comments</a>
+					
+					<ul>
+						<li><a href="#0">All Comments</a></li>
+						<li><a href="#0">Edit Comment</a></li>
+						<li><a href="#0">Delete Comment</a></li>
+					</ul>
+				</li>-->
+			</ul>
+
+			<!--<ul>
+				<li class="cd-label">Secondary</li>
+				<li class="has-children bookmarks">
+					<a href="#0">Bookmarks</a>
+					
+					<ul>
+						<li><a href="#0">All Bookmarks</a></li>
+						<li><a href="#0">Edit Bookmark</a></li>
+						<li><a href="#0">Import Bookmark</a></li>
+					</ul>
+				</li>
+				<li class="has-children images">
+					<a href="#0">Images</a>
+					
+					<ul>
+						<li><a href="#0">All Images</a></li>
+						<li><a href="#0">Edit Image</a></li>
+					</ul>
+				</li>
+
+				<li class="has-children users">
+					<a href="#0">Users</a>
+					
+					<ul>
+						<li><a href="#0">All Users</a></li>
+						<li><a href="#0">Edit User</a></li>
+						<li><a href="#0">Add User</a></li>
+					</ul>
+				</li>
+			</ul>-->
+
+			<ul>
+				<!--<li class="cd-label">Action</li>-->
+				<li class="action-btn"><a href="#0">+ Complete Profile</a></li>
+			</ul>
+		</nav>
+
+		<div class="content-wrapper" style="margin-top: -50px">
+			<h1>Hi <span style="color: deepskyblue">Ritesh,</span> Looks like you're doing great.</h1>
+            <div class="row">
+                <div class="col-lg-3 col-xs-6">
+                    <div class="rad-info-box rad-txt-success">
+                        <!--<i class="fa fa-windows"></i>-->
+                        <span class="heading">Earned</span>
+                        <span class="value"><span>1,234$</span></span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-xs-6">
+                    <div class="rad-info-box rad-txt-primary">
+                        <!--<i class="fa fa-facebook"></i>-->
+                        <span class="heading">Spent</span>
+                        <span class="value"><span>1,990$</span></span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-xs-6">
+                    <div class="rad-info-box rad-txt-danger">
+                        <!--<i class="fa fa-google-plus"></i>-->
+                        <span class="heading">Jobs Done</span>
+                        <span class="value"><span>55</span></span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-xs-6">
+                    <div class="rad-info-box">
+                        <!--<i class="fa fa-apple"></i>-->
+                        <span class="heading">Jobs Posted</span>
+                        <span class="value"><span>22</span></span>
+                    </div>
+                </div>
+            </div>
+		</div> <!-- .content-wrapper -->
+	</main> <!-- .cd-main-content -->
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/jquery.menu-aim.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>
