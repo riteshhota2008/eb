@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+    <script src="js/modernizr.js"></script> <!-- Modernizr -->
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <title>Easily Busy | Dashboard</title>
+    <style>
+        .ux-progress-radial-holder {
+            display: inline-block;
+            margin-left: 50px;
+        }
+
+        /* @bar container */
+        .ux-progress-radial {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            position: relative;
+            background-color: #62BDF1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #fff;
+        }
+
+        /* @optional centered circle with text */
+        .ux-progress-overlay {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 76px;
+            height: 76px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .ux-progress-val {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+    <style>
+
+
+        .rad-info-box {
+            margin-bottom: 16px;
+            box-shadow: 1px 1px 2px 0 #CCCCCC;
+            padding: 20px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+            background: white !important;
+        }
+
+        .rad-info-box i {
+            display: block;
+            background-clip: padding-box;
+            margin-right: 15px;
+            height: 60px;
+            width: 60px;
+            border-radius: 100%;
+            line-height: 60px;
+            text-align: center;
+            font-size: 4.4em;
+            position: absolute;
+        }
+
+        .rad-info-box .value,
+        .rad-info-box .heading {
+            display: block;
+            /*position: relative;*/
+            color: #515d6e;
+            text-align: right;
+            z-index: 10;
+        }
+
+        .rad-info-box .heading {
+            font-size: 1.2em;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        .rad-info-box .value {
+            font-size: 2.1em;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+    </style>
+    <style>
+        @media only screen and (max-width: 768px)	{
+            .divider {
+                display: none;
+            }
+            .ux-progress-radial-holder  {
+                display: none;
+            }
+            .col-md-6 {
+                border-left: transparent;
+            }
+        }
+    </style>
+</head>
+<body style="background-color: #ffffff">
+<header class="cd-main-header">
+    <a href="#0" class="cd-logo"><img src="img/cd-logo.svg" alt="Logo"></a>
+
+    <div class="cd-search is-hidden">
+        <form action="#0">
+            <input type="search" placeholder="Search... ">
+        </form>
+    </div> <!-- cd-search -->
+
+    <a href="#0" class="cd-nav-trigger"><!--Menu--><span></span></a>
+
+    <nav class="cd-nav">
+        <ul class="cd-top-nav">
+            <!--<li><a href="#0">Tour</a></li>
+            <li><a href="#0">Support</a></li>-->
+            <li class="has-children account">
+                <a href="#0">
+                    <img src="img/cd-avatar.png" alt="avatar">
+                    Account
+                </a>
+
+                <ul>
+
+                    <li><a href="#0">My Account</a></li>
+                    <li><a href="#0">Edit Account</a></li>
+                    <li><a href="#0">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header> <!-- .cd-main-header -->
+
+<main class="cd-main-content">
+    <nav class="cd-side-nav">
+        <ul>
+            <!--<li class="cd-label">Main</li>-->
+            <li class="has-children overview">
+                <a href="#0" class="space">Find Jobs</a>
+                <a href="#0">Saved Jobs</a>
+                <a href="#0">Proposals</a>
+                <a href="#0">Profile</a>
+                <a href="#0">My Stats</a>
+                <a href="#0">Tests</a>
+
+                <!--<ul>
+                    <li><a href="#0">All Data</a></li>
+                    <li><a href="#0">Category 1</a></li>
+                    <li><a href="#0">Category 2</a></li>
+                </ul>-->
+            </li>
+            <li class="has-children notifications active">
+                <a href="#0">Notifications<span class="count">3</span></a>
+
+                <!--<ul>
+                    <li><a href="#0">All Notifications</a></li>
+                    <li><a href="#0">Friends</a></li>
+                    <li><a href="#0">Other</a></li>
+                </ul>-->
+            </li>
+
+            <li class="has-children bookmarks">
+
+                <hr class="divider" color="f6f6f6">
+                <a href="#0">Go Premium</a>
+                <a href="#0">Settings</a>
+                <a href="#0">Help</a>
+
+                <hr class="divider" color="f6f6f6">
+
+
+
+
+
+                <div class="ux-progress-radial-holder">
+                    <div class="ux-progress-radial progress-20 percent-20">
+                        <div class="ux-progress-overlay"><span class="ux-progress-val" style="color:#7e7e7e">75% <br>Complete</span></div>
+                    </div>
+                </div>
+
+            </li>
+
+            <!--<li class="has-children comments">
+                <a href="#0">Comments</a>
+
+                <ul>
+                    <li><a href="#0">All Comments</a></li>
+                    <li><a href="#0">Edit Comment</a></li>
+                    <li><a href="#0">Delete Comment</a></li>
+                </ul>
+            </li>-->
+        </ul>
+
+        <!--<ul>
+            <li class="cd-label">Secondary</li>
+            <li class="has-children bookmarks">
+                <a href="#0">Bookmarks</a>
+
+                <ul>
+                    <li><a href="#0">All Bookmarks</a></li>
+                    <li><a href="#0">Edit Bookmark</a></li>
+                    <li><a href="#0">Import Bookmark</a></li>
+                </ul>
+            </li>
+            <li class="has-children images">
+                <a href="#0">Images</a>
+
+                <ul>
+                    <li><a href="#0">All Images</a></li>
+                    <li><a href="#0">Edit Image</a></li>
+                </ul>
+            </li>
+
+            <li class="has-children users">
+                <a href="#0">Users</a>
+
+                <ul>
+                    <li><a href="#0">All Users</a></li>
+                    <li><a href="#0">Edit User</a></li>
+                    <li><a href="#0">Add User</a></li>
+                </ul>
+            </li>
+        </ul>-->
+
+        <ul>
+            <!--<li class="cd-label">Action</li>-->
+            <li class="action-btn"><a href="#0">+ Complete Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-wrapper">
+        <div class="jumbotron" style="background-color: #FFFFFF;border: 1px solid #eee;margin-top: 50px;height: auto">
+            <div class="row">
+                <div class="col-md-3">
+                    <img class="team-circle img-responsive text-center" src="http://bluelinelabs.com/images/thumb-eric.jpg" alt="Eric Kuck" width="100%" style="border-radius: 100%">
+                </div>
+                <div class="col-md-3" style="padding-right: 20px;">
+                    <h1 style="margin-top: -50px">Ritesh Hota</h1>
+                </div>
+                <div class="col-md-6" style="border-left: 1px solid #eee;padding-left: 40px;text-align: left;margin-top: 20px">
+                    <p style="font-size: 18px">Pay Rates : <span style="color: #888d95;padding-left: 20px">$14.00 /hr</span></p>
+                    <p style="font-size: 18px">Tagline : <span style="color: #888d95;padding-left: 20px">Web Developer</span></p>
+                    <p style="font-size: 18px">Location : <span style="color: #888d95;padding-left: 20px">Chennai, India</span></p>
+                    <p style="font-size: 18px;">Email : <span style="color: #888d95;padding-left: 20px">riteshhota.2008@gmail.com</span></p>
+                    <br>
+                    <a href="#" class="btn btn-default" style="float: right">Edit Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="jumbotron" style="background-color: #FFFFFF;border: 1px solid #eee;margin-top: 20px">
+            <label style="font-size: 20px">Summary</label>
+            <p style="color: #888d95;font-family: 'Open Sans', sans-serif;font-size: 17px;margin-top: 20px">Hey, I am Ritesh Hota, currently pursuing my Btech Degree in SRM University, 2nd year. My hobbies are playing and watching cricket. I am passionate about coding and open source development. I have a strong interest for Robotics & Ethical Hacking. - Web Developer, UI/UX Designer, Entrepreneur, Open Source Developer, Perfectionist, Freelance Developer, Avid Gamer. </p>
+        </div>
+
+        <div class="jumbotron" style="background-color: #FFFFFF;border: 1px solid #eee;margin-top: 20px">
+            <label style="font-size: 20px">Skills</label>
+            <p style="color: #888d95;font-family: 'Open Sans', sans-serif;font-size: 17px;margin-top: 20px">No items to display</p>
+        </div>
+
+        <div class="jumbotron" style="background-color: #FFFFFF;border: 1px solid #eee;margin-top: 20px">
+            <label style="font-size: 20px">Portfolio</label>
+            <p style="color: #888d95;font-family: 'Open Sans', sans-serif;font-size: 17px;margin-top: 20px">No items to display</p>
+        </div>
+
+        <div class="jumbotron" style="background-color: #FFFFFF;border: 1px solid #eee;margin-top: 20px">
+            <label style="font-size: 20px">Certifications</label>
+            <p style="color: #888d95;font-family: 'Open Sans', sans-serif;font-size: 17px;margin-top: 20px">No items to display</p>
+        </div>
+
+        <div class="jumbotron" style="background-color: #FFFFFF;border: 1px solid #eee;margin-top: 20px">
+            <label style="font-size: 20px">Tests</label>
+            <p style="color: #888d95;font-family: 'Open Sans', sans-serif;font-size: 17px;margin-top: 20px">No items to display</p>
+        </div>
+
+        <div class="jumbotron" style="background-color: #FFFFFF;border: 1px solid #eee;margin-top: 20px">
+            <label style="font-size: 20px">Employment History</label>
+            <p style="color: #888d95;font-family: 'Open Sans', sans-serif;font-size: 17px;margin-top: 20px">No items to display</p>
+        </div>
+
+        <div class="jumbotron" style="background-color: #FFFFFF;border: 1px solid #eee;margin-top: 20px">
+            <label style="font-size: 20px">Education</label>
+            <p style="color: #888d95;font-family: 'Open Sans', sans-serif;font-size: 17px;margin-top: 20px">No items to display</p>
+        </div>
+
+    </div> <!-- .content-wrapper -->
+</main> <!-- .cd-main-content -->
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/jquery.menu-aim.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>

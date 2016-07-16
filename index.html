@@ -1,1039 +1,286 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="en" class="no-js">
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f4a460">
-    <meta name="description" content="">
-    <meta name="author" content="">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
 
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" sizes="512x512">
-    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
 
-    <title>EasilyBusy</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 
-    <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:400,300,500,700' rel='stylesheet' type='text/css'>
-
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+  	
+	<title>Easily Busy | Dashboard</title>
     <style>
-
-        h1,h2,h3,p {
-            font-family: 'Alegreya Sans', sans-serif;
-        }
-
-    </style>
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-
-    <!-- Custom Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
-
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/creative.css" type="text/css">
-
-
-
-    <style>
-
-
-        #portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
-            opacity: 1;
-        }
-        #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
-            position: absolute;
-            width: 100%;
-            height: 20px;
-            font-size: 20px;
-            text-align: center;
-            top: 50%;
-            margin-top: -12px;
-            color: white;
-        }
-        #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
-            margin-top: -12px;
-        }
-        #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
-        #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
-            margin: 0;
-        }
-        #portfolio .portfolio-item .portfolio-caption {
-            max-width: 400px;
-            margin: 0 auto;
-            background-color: white;
-            text-align: center;
-            padding: 25px;
-        }
-        #portfolio .portfolio-item .portfolio-caption h4 {
-            text-transform: none;
-            margin: 0;
-        }
-        #portfolio .portfolio-item .portfolio-caption p {
-            font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-style: italic;
-            font-size: 16px;
-            margin: 0;
-        }
-        #portfolio * {
-            z-index: 2;
-        }
-        @media (min-width: 767px) {
-            #portfolio .portfolio-item {
-                margin: 0 0 30px;
-            }
-        }
-
-    </style>
-
-
-    <style>
-
-        footer {
-            color: white;
-        }
-        footer h3 {
-            margin-bottom: 30px;
-        }
-        footer .footer-above {
-            padding-top: 50px;
-            background-color: #292b49;/*#2c3e50*/
-        }
-        footer .footer-col {
-            margin-bottom: 50px;
-        }
-        footer .footer-below {
-            padding: 25px 0;
-            background-color: #121435;/*#233140*/
-        }
-        .btn-social {
+        .ux-progress-radial-holder {
             display: inline-block;
-            height: 50px;
-            width: 50px;
-            border: 2px solid white;
+            margin-left: 50px;
+        }
+
+        /* @bar container */
+        .ux-progress-radial {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            position: relative;
+            background-color: #62BDF1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #fff;
+        }
+
+        /* @optional centered circle with text */
+        .ux-progress-overlay {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 76px;
+            height: 76px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .ux-progress-val {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+    <style>
+
+
+        .rad-info-box {
+            margin-bottom: 16px;
+            box-shadow: 1px 1px 2px 0 #CCCCCC;
+            padding: 20px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+            background: white !important;
+        }
+
+        .rad-info-box i {
+            display: block;
+            background-clip: padding-box;
+            margin-right: 15px;
+            height: 60px;
+            width: 60px;
             border-radius: 100%;
+            line-height: 60px;
             text-align: center;
-            font-size: 20px;
-            line-height: 45px;
-        }
-        .btn:focus,
-        .btn:active,
-        .btn.active {
-            outline: none;
-        }
-
-    </style>
-
-    <style>
-
-        /* Reset */
-
-        .social-buttons {
-            height: 50px;
-            margin: auto;
-            font-size: 0;
-            text-align: center;
+            font-size: 4.4em;
             position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
         }
 
-        .social-button {
-            display: inline-block;
-            background-color: #fff;
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            margin: 0 10px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            opacity: .99;
-            border-radius: 28%;
-            box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
-            -webkit-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
-            transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
-        }
-        .social-button:before {
-            content: '';
-            background-color: #000;
-            width: 120%;
-            height: 120%;
-            position: absolute;
-            top: 90%;
-            left: -110%;
-            -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-            -webkit-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
-            transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
-        }
-        .social-button .fa {
-            font-size: 38px;
-            vertical-align: middle;
-            -webkit-transform: scale(0.8);
-            transform: scale(0.8);
-            -webkit-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
-            transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
-        }
-        .social-button.facebook:before {
-            background-color: #3B5998;
-        }
-        .social-button.facebook .fa {
-            color: #3B5998;
-        }
-        .social-button.twitter:before {
-            background-color: #3CF;
-        }
-        .social-button.twitter .fa {
-            color: #3CF;
-        }
-        .social-button.google:before {
-            background-color: #DC4A38;
-        }
-        .social-button.google .fa {
-            color: #DC4A38;
-        }
-        .social-button.dribbble:before {
-            background-color: #0077b5;
-        }
-        .social-button.dribbble .fa {
-            color: #0077b5;
-        }
-        .social-button.skype:before {
-            background-color: #543A3A;
-        }
-        .social-button.skype .fa {
-            color: #543A3A;
-        }
-        .social-button:focus:before, .social-button:hover:before {
-            top: -10%;
-            left: -10%;
-        }
-        .social-button:focus .fa, .social-button:hover .fa {
-            color: #fff;
-            -webkit-transform: scale(1);
-            transform: scale(1);
-        }
-
-
-    </style>
-
-    <style>
-
-        /*------Login Form---------*/
-        *, *:before, *:after {
-            box-sizing: border-box;
-        }
-
-        html {
-            overflow-y: scroll;
-        }
-
-        /*body {
-            background: #c1bdba;
-            font-family: 'Titillium Web', sans-serif;
-        }*/
-
-        a {
-            text-decoration: none;
-            color: #1ab188;
-            -webkit-transition: .5s ease;
-            transition: .5s ease;
-        }
-        a:hover {
-            color: #179b77;
-        }
-
-        .form {
-            background: rgba(19, 35, 47, 0.9);
-            padding: 40px;
-            max-width: 600px;
-            margin: 40px auto;
-            border-radius: 4px;
-            box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
-        }
-
-        .tab-group {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 40px 0;
-        }
-        .tab-group:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        .tab-group li a {
+        .rad-info-box .value,
+        .rad-info-box .heading {
             display: block;
-            text-decoration: none;
-            padding: 15px;
-            background: rgba(160, 179, 176, 0.25);
-            color: #a0b3b0;
-            font-size: 20px;
-            float: left;
-            width: 50%;
-            text-align: center;
-            cursor: pointer;
-            -webkit-transition: .5s ease;
-            transition: .5s ease;
-        }
-        .tab-group li a:hover {
-            background: #179b77;
-            color: #ffffff;
-        }
-        .tab-group .active a {
-            background: #1ab188;
-            color: #ffffff;
-        }
-
-        .tab-content > div:last-child {
-            display: none;
-        }
-
-        h1 {
-            text-align: center;
-            color: #ffffff;
-            font-weight: 300;
-            margin: 0 0 40px;
-        }
-
-        label {
-            position: absolute;
-            -webkit-transform: translateY(6px);
-            transform: translateY(6px);
-            left: 13px;
-            color: rgba(255, 255, 255, 0.5);
-            -webkit-transition: all 0.25s ease;
-            transition: all 0.25s ease;
-            -webkit-backface-visibility: hidden;
-            pointer-events: none;
-            font-size: 22px;
-        }
-        label .req {
-            margin: 2px;
-            color: #1ab188;
-        }
-
-        label.active {
-            -webkit-transform: translateY(50px);
-            transform: translateY(50px);
-            left: 2px;
-            font-size: 14px;
-        }
-        label.active .req {
-            opacity: 0;
-        }
-
-        label.highlight {
-            color: #ffffff;
-        }
-
-        input, textarea {
-            font-size: 22px;
-            display: block;
-            width: 100%;
-            height: 100%;
-            padding: 5px 10px;
-            background: none;
-            background-image: none;
-            border: 1px solid #a0b3b0;
-            color: #ffffff;
-            border-radius: 0;
-            -webkit-transition: border-color .25s ease, box-shadow .25s ease;
-            transition: border-color .25s ease, box-shadow .25s ease;
-        }
-        input:focus, textarea:focus {
-            outline: 0;
-            border-color: #1ab188;
-        }
-
-        textarea {
-            border: 2px solid #a0b3b0;
-            resize: vertical;
-        }
-
-        .field-wrap {
-            position: relative;
-            margin-bottom: 40px;
-        }
-
-        .top-row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        .top-row > div {
-            float: left;
-            width: 48%;
-            margin-right: 4%;
-        }
-        .top-row > div:last-child {
-            margin: 0;
-        }
-
-        .button {
-            border: 0;
-            outline: none;
-            border-radius: 0;
-            padding: 15px 0;
-            font-size: 2rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: .1em;
-            background: #1ab188;
-            color: #ffffff;
-            -webkit-transition: all 0.5s ease;
-            transition: all 0.5s ease;
-            -webkit-appearance: none;
-        }
-        .button:hover, .button:focus {
-            background: #179b77;
-        }
-
-        .button-block {
-            display: block;
-            width: 100%;
-        }
-
-        .forgot {
-            margin-top: -20px;
+            /*position: relative;*/
+            color: #515d6e;
             text-align: right;
+            z-index: 10;
         }
 
+        .rad-info-box .heading {
+            font-size: 1.2em;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
 
+        .rad-info-box .value {
+            font-size: 2.1em;
+            font-weight: 600;
+            margin-top: 5px;
+        }
 
     </style>
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-<body id="page-top">
-
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Easily Busy</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a data-toggle="modal" data-target="#myModal" class="page-scroll" style="cursor: pointer">Sign Up</a>
-                    </li>
-                    <li>
-                        <a data-toggle="modal" data-target="#myModal" class="page-scroll" style="cursor: pointer">Login</a>
-                    </li>
-                   <!-- <li>
-                        <a class="page-scroll" href="#portfolio">Projects</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>-->
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1>#Get_easily_busy</h1>
-                <h2>For freelancers, <strong>easilybusy</strong> is the brand that delivers unmatched opportunities because your career is our job.</h2>
-               <!-- <hr> --><br>
-              <!--  <p style="color: #f4a460">Get matched with the job that's right for you.</p>
-                <p>For freelancers, <strong>easilybusy</strong> is the brand that delivers unmatched opportunities because your career is our job.</p>-->
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Get Started</a>
-            </div>
-        </div>
-    </header>
-
-    <section class="bg-primary" id="about" style="background-color: #f4a460"><!--#F4A460-->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">We've got what you need!</h2>
-                    <hr class="light">
-                    <p class="text-faded" style="color: #fff;font-size: 20px">Get work done with freelancers. Get amazing results working with the best programmers, designers, writers and other top online pros. Hire freelancers with confidence, always knowing their work experience and feedback from other clients.</p>
-                   <!-- <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>-->
-                </div>
-            </div>
-        </div>
-    </section>
-
-  <!--  <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">At Your Service</h2>
-                    <hr class="primary">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
-                        <h3>Sturdy Templates</h3>
-                        <p class="text-muted">Our templates are updated regularly so they don't break.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
-                        <h3>Ready to Ship</h3>
-                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
-                        <h3>Up to Date</h3>
-                        <p class="text-muted">We update dependencies to keep things fresh.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
-                        <h3>Made with Love</h3>
-                        <p class="text-muted">You have to make your websites with love these days!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Services</h2>
-                    <div class="page-header"></div>
-                    <!--<h3 class="section-subheading text-muted">Work with someone perfect for your team.</h3>-->
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-briefcase fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                    </span>
-                    <h4 class="service-heading">POST A PROJECT</h4>
-                    <p class="text-muted">Browse profiles, portfolios and reviews to assemble your 24/7 online workforce.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-users fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                    </span>
-                    <h4 class="service-heading">HIRE FREELANCER</h4>
-                    <p class="text-muted">Collaborate in shared online work rooms and receive daily activity reports.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-money fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">PAY FREELANCERS SAFELY</h4>
-                    <p class="text-muted">We only release payment when you are 100% satisfied with the work provided.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" style="margin-top: -100px">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Get your project started now...</h2>
-                    <div class="page-header"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="no-padding" id="portfolio" style="margin-left: 30px;margin-right: 30px;margin-top: -50px;">
-        <div class="container-fluid">
-            <div class="row ">
-                <div class="col-lg-3 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/Domains/web_design.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Web Developers
-                                </div>
-                                <div class="project-name">
-                                    FRONT-END DEVELOPERS<BR/>BACK-END DEVELOPERS<BR/>PROGRAMMERS
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/Domains/app_design.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Mobile developers
-                                </div>
-                                <div class="project-name">
-                                    OS APP DEVELOPERS<BR/>ANDROID DEVELOPERS<BR/>UI/UX DESIGNERS
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/Domains/GraphicDesign.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Designers &amp; Creatives
-                                </div>
-                                <div class="project-name">
-                                    GRAPHIC DESIGNERS<BR/>UI/UX DESIGNERS<BR/>MOTION GRAPHICS
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/Domains/blogging.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Writers
-                                </div>
-                                <div class="project-name">
-                                    BLOG WRITERS<BR/>CONTENT WRITERS<BR/>COPYWRITERS
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/Domains/virtual_assistant.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Virtual assistants
-                                </div>
-                                <div class="project-name">
-                                    PERSONAL ASSISTANTS<BR/>TRANSCRIPTIONISTS<BR/>WEB RESEARCHERS
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/Domains/customer_support.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Customer service agents
-                                </div>
-                                <div class="project-name">
-                                    PHONE SUPPORT EXPERTS<BR/>EMAIL SUPPORT EXPERTS<BR/>LIVE CHAT SUPPORT PROS
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/Domains/sales_marketing.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Sales &amp; marketing experts
-                                </div>
-                                <div class="project-name">
-                                    SEO SPECIALISTS<BR/>EMAIL AUTOMATORS<BR/>MARKETING EXPERTS
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/Domains/accounting_consulting.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Accountants &amp; consultants
-                                </div>
-                                <div class="project-name">
-                                    TAX ACCOUNTANTS<BR/>BOOKKEEPERS<BR/>FINANCIAL MODELERS
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- New services and portfolio -->
-
-    <!-- Services Section -->
-
-
-    <!-- Portfolio Grid Section -->
- <!--   <section id="portfolio" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/fullsize/1.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Round Icons</h4>
-                        <p class="text-muted">Graphic Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/fullsize/1.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Startup Framework</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/fullsize/1.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/fullsize/1.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/fullsize/1.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Escape</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/fullsize/1.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Dreams</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- End -->
-
-    <aside class="bg-dark" style="margin-top: 100px" id="contact">
-        <div class="container text-center">
-            <div class="call-to-action">
-                <h2>Let's Get In Touch!</h2>
-                <a href="#" class="btn btn-default btn-xl sr-button">Contact Us!</a>
-            </div>
-        </div>
-    </aside>
-
-    <!-- Footer -->
-    <footer class="text-center">
-        <div class="footer-above">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col col-md-4">
-                        <h3>Location</h3>
-                        <p>#95 VMK Vihar, Sanjay Gandhi Nagar<br>Virugambakkam, Chennai - 600092</p>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3>Around the Web</h3><br><br><br><br><br>
-
-                        <div class="social-buttons"><a href="#" class="social-button facebook"><i class="fa fa-facebook"></i></a><a href="#" class="social-button twitter"><i class="fa fa-twitter"></i></a><a href="#" class="social-button google"><i class="fa fa-google-plus" aria-hidden="true"></i></a><a href="#" class="social-button dribbble"><i class="fa fa-linkedin" aria-hidden="true"></i></a><a href="#" class="social-button skype"><i class="fa fa-github" aria-hidden="true"></i></a>
-                        </div>
-                   <!--     <ul class="list-inline">
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
-                            </li>
-                        </ul> -->
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3><!--About Freelancer--></h3>
-                        <a href="#" style="cursor: pointer"> <img src="img/Get_it_on_Google_play.svg.png" width="100%"></a>
-                        <p><!--Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.--></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-below">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        Copyright &copy; EasilyBusy 2016
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Login and Registration Form -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="form">
-
-        <ul class="tab-group">
-            <li class="tab active"><a href="#signup">Sign Up</a></li>
-            <li class="tab"><a href="#login">Log In</a></li>
-        </ul>
-
-        <div class="tab-content">
-            <div id="signup">
-                <h1>Sign Up for Free</h1>
-
-                <form action="" method="post">
-
-                    <!--<div class="top-row">
-                        <div class="field-wrap">
-                            <label>
-                                User Name<span class="req">*</span>
-                            </label>
-                            <input type="text" required autocomplete="off" />
-                        </div>
-
-                        <div class="field-wrap">
-                            <!--<label>
-                                Last Name<span class="req">*</span>
-                            </label>
-                            <input type="text"required autocomplete="off"/>-->
-                     <!--   </div>
-                    </div>-->
-                    <div class="field-wrap">
-                        <label>
-                            Username<span class="req">*</span>
-                        </label>
-                        <input type="text" name="username" required autocomplete="off"/>
-                    </div>
-
-                    <div class="field-wrap">
-                        <label>
-                            Email Address<span class="req">*</span>
-                        </label>
-                        <input type="email" name="email" required autocomplete="off"/>
-                    </div>
-
-                    <div class="field-wrap">
-                        <label>
-                            Password<span class="req">*</span>
-                        </label>
-                        <input type="password" name="password" required autocomplete="off"/>
-                    </div>
-
-                    <button type="submit" class="button button-block" name="submit"/>Get Started</button>
-
-                </form>
-
-            </div>
-
-            <div id="login">
-                <h1>Welcome Back!</h1>
-
-                <form action="" method="post">
-
-                    <div class="field-wrap">
-                        <label>
-                            Email Address<span class="req">*</span>
-                        </label>
-                        <input type="email"name="email" required autocomplete="off"/>
-                    </div>
-
-                    <div class="field-wrap">
-                        <label>
-                            Password<span class="req">*</span>
-                        </label>
-                        <input type="password"name="password" required autocomplete="off"/>
-                    </div>
-
-                    <p class="forgot"><a href="create-profile.html">Forgot Password?</a></p>
-
-                    <button class="button button-block"name="submit"/>Log In</button>
-
-                </form>
-
-            </div>
-
-        </div><!-- tab-content -->
-
-    </div> <!-- /form -->
-
-    <!-- End -->
-
-</div>
-
-
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-
-
-    <!-- Login Form Js-->
-
-    <script>
-
-        $('.form').find('input, textarea').on('keyup blur focus', function (e) {
-
-            var $this = $(this),
-                    label = $this.prev('label');
-
-            if (e.type === 'keyup') {
-                if ($this.val() === '') {
-                    label.removeClass('active highlight');
-                } else {
-                    label.addClass('active highlight');
-                }
-            } else if (e.type === 'blur') {
-                if( $this.val() === '' ) {
-                    label.removeClass('active highlight');
-                } else {
-                    label.removeClass('highlight');
-                }
-            } else if (e.type === 'focus') {
-
-                if( $this.val() === '' ) {
-                    label.removeClass('highlight');
-                }
-                else if( $this.val() !== '' ) {
-                    label.addClass('highlight');
-                }
+    <style>
+        @media only screen and (max-width: 768px)	{
+            .divider {
+                display: none;
             }
+            .ux-progress-radial-holder  {
+                display: none;
+            }
+            .space {
+                margin-top: -50px;
+            }
+        }
+    </style>
+</head>
+<body>
+	<header class="cd-main-header">
+		<a href="#0" class="cd-logo"><img src="img/cd-logo.svg" alt="Logo"></a>
+		
+		<div class="cd-search is-hidden">
+			<form action="#0">
+				<input type="search" placeholder="Search... ">
+			</form>
+		</div> <!-- cd-search -->
 
-        });
+		<a href="#0" class="cd-nav-trigger"><!--Menu--><span></span></a>
 
-        $('.tab a').on('click', function (e) {
+		<nav class="cd-nav">
+			<ul class="cd-top-nav">
+				<!--<li><a href="#0">Tour</a></li>
+				<li><a href="#0">Support</a></li>-->
+				<li class="has-children account">
+					<a href="#0">
+						<img src="img/cd-avatar.png" alt="avatar">
+						Account
+					</a>
 
-            e.preventDefault();
+					<ul>
 
-            $(this).parent().addClass('active');
-            $(this).parent().siblings().removeClass('active');
+						<li><a href="#0">My Account</a></li>
+						<li><a href="#0">Edit Account</a></li>
+						<li><a href="#0">Logout</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header> <!-- .cd-main-header -->
 
-            target = $(this).attr('href');
+	<main class="cd-main-content">
+		<nav class="cd-side-nav">
+			<ul>
+				<!--<li class="cd-label">Main</li>-->
+				<li class="has-children overview" style="margin-top: 50px">
+					<a href="#0" class="space">Find Jobs</a>
+					<a href="#0">Saved Jobs</a>
+                    <a href="#0">Proposals</a>
+                    <a href="profile.html">Profile</a>
+                    <a href="#0">My Stats</a>
+                    <a href="#0">Tests</a>
+					
+					<!--<ul>
+						<li><a href="#0">All Data</a></li>
+						<li><a href="#0">Category 1</a></li>
+						<li><a href="#0">Category 2</a></li>
+					</ul>-->
+				</li>
+				<li class="has-children notifications active">
+					<a href="#0">Notifications<span class="count">3</span></a>
+					
+					<!--<ul>
+						<li><a href="#0">All Notifications</a></li>
+						<li><a href="#0">Friends</a></li>
+						<li><a href="#0">Other</a></li>
+					</ul>-->
+				</li>
 
-            $('.tab-content > div').not(target).hide();
+                <li class="has-children bookmarks">
 
-            $(target).fadeIn(600);
+                <hr class="divider" color="f6f6f6">
+                <a href="#0">Go Premium</a>
+                <a href="#0">Settings</a>
+                <a href="#0">Help</a>
 
-        });
+                    <hr class="divider" color="f6f6f6">
 
-    </script>
 
-    <!-- end -->
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="js/scrollreveal.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/jquery.fittext.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="js/creative.js"></script>
+                <div class="ux-progress-radial-holder">
+                    <div class="ux-progress-radial progress-20 percent-20">
+                        <div class="ux-progress-overlay"><span class="ux-progress-val" style="color:#7e7e7e">75% <br>Complete</span></div>
+                    </div>
+                </div>
 
+                </li>
+
+				<!--<li class="has-children comments">
+					<a href="#0">Comments</a>
+					
+					<ul>
+						<li><a href="#0">All Comments</a></li>
+						<li><a href="#0">Edit Comment</a></li>
+						<li><a href="#0">Delete Comment</a></li>
+					</ul>
+				</li>-->
+			</ul>
+
+			<!--<ul>
+				<li class="cd-label">Secondary</li>
+				<li class="has-children bookmarks">
+					<a href="#0">Bookmarks</a>
+					
+					<ul>
+						<li><a href="#0">All Bookmarks</a></li>
+						<li><a href="#0">Edit Bookmark</a></li>
+						<li><a href="#0">Import Bookmark</a></li>
+					</ul>
+				</li>
+				<li class="has-children images">
+					<a href="#0">Images</a>
+					
+					<ul>
+						<li><a href="#0">All Images</a></li>
+						<li><a href="#0">Edit Image</a></li>
+					</ul>
+				</li>
+
+				<li class="has-children users">
+					<a href="#0">Users</a>
+					
+					<ul>
+						<li><a href="#0">All Users</a></li>
+						<li><a href="#0">Edit User</a></li>
+						<li><a href="#0">Add User</a></li>
+					</ul>
+				</li>
+			</ul>-->
+
+			<ul>
+				<!--<li class="cd-label">Action</li>-->
+				<li class="action-btn"><a href="#0">+ Complete Profile</a></li>
+			</ul>
+		</nav>
+
+		<div class="content-wrapper" style="margin-top: -50px">
+			<h1>Hi <span style="color: deepskyblue">Ritesh,</span> Looks like you're doing great.</h1>
+            <div class="row">
+                <div class="col-lg-3 col-xs-6">
+                    <div class="rad-info-box rad-txt-success">
+                        <!--<i class="fa fa-windows"></i>-->
+                        <span class="heading">Earned</span>
+                        <span class="value"><span>1,234$</span></span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-xs-6">
+                    <div class="rad-info-box rad-txt-primary">
+                        <!--<i class="fa fa-facebook"></i>-->
+                        <span class="heading">Spent</span>
+                        <span class="value"><span>1,990$</span></span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-xs-6">
+                    <div class="rad-info-box rad-txt-danger">
+                        <!--<i class="fa fa-google-plus"></i>-->
+                        <span class="heading">Jobs Done</span>
+                        <span class="value"><span>55</span></span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-xs-6">
+                    <div class="rad-info-box">
+                        <!--<i class="fa fa-apple"></i>-->
+                        <span class="heading">Jobs Posted</span>
+                        <span class="value"><span>22</span></span>
+                    </div>
+                </div>
+            </div>
+		</div> <!-- .content-wrapper -->
+	</main> <!-- .cd-main-content -->
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/jquery.menu-aim.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
 </body>
-
 </html>
