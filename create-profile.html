@@ -4,113 +4,234 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="Secondary-nav/css/reset.css"> <!-- CSS reset -->
-    <link rel="stylesheet" href="Secondary-nav/css/style.css"> <!-- Resource style -->
-    <script src="Secondary-nav/js/modernizr.js"></script> <!-- Modernizr -->
+    <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+    <script src="js/modernizr.js"></script> <!-- Modernizr -->
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <title>Easily Busy | Dashboard</title>
 
     <style>
+        p {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .btn {
+            background: transparent;
+            color: #1a93de;
+        }
+    </style>
 
-        @media only screen and (min-width: 768px)	{
-            header {
-                height: 50px;
-            }
+    <style>
+        .ux-progress-radial-holder {
+            display: inline-block;
+            margin-left: 50px;
         }
 
+        /* @bar container */
+        .ux-progress-radial {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            position: relative;
+            background-color: #62BDF1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #fff;
+        }
+
+        /* @optional centered circle with text */
+        .ux-progress-overlay {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 76px;
+            height: 76px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .ux-progress-val {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+    <style>
+        @media only screen and (max-width: 768px)	{
+            .divider {
+                display: none;
+            }
+            .ux-progress-radial-holder  {
+                display: none;
+            }
+            .col-md-6 {
+                border-left: transparent;
+            }
+        }
     </style>
 
     <title>Secondary Expandable Menu</title>
 </head>
-<body>
-<header>
-    <a id="cd-logo" href="#0"><img src="Secondary-nav/img/cd-logo.svg" height="10px" alt="Homepage"></a>
-    <nav id="cd-top-nav">
-        <!--<ul>
-            <li><a href="#0">Tour</a></li>
-            <li><a href="#0">Login</a></li>
-        </ul>-->
-    </nav>
-    <a id="cd-menu-trigger" href="index.html"><span class="cd-menu-text" style="margin-top: -9px">Menu</span><span class="cd-menu-icon"></span></a>
-</header>
-<main class="cd-main-content" style="background-color: #FFFFFF">
+<body style="background-color: #ffffff">
+<header class="cd-main-header">
+    <a href="#0" class="cd-logo"><img src="img/cd-logo.svg" alt="Logo"></a>
 
-    <div class="container" style="margin-top: 20px">
-        <h1 style="text-align: center">Create your profile</h1>
-        <div class="jumbotron" style="background-color: #FFFFFF;border: 1px solid #d3d3d3;margin-top: 50px;box-shadow: 0 6px 10px 1px #ccc;">
+    <div class="cd-search is-hidden">
+        <form action="#0">
+            <input type="search" placeholder="Search... ">
+        </form>
+    </div> <!-- cd-search -->
+
+    <a href="#0" class="cd-nav-trigger"><!--Menu--><span></span></a>
+
+    <nav class="cd-nav">
+        <ul class="cd-top-nav">
+            <!--<li><a href="#0">Tour</a></li>
+            <li><a href="#0">Support</a></li>-->
+            <li class="has-children account">
+                <a href="#0">
+                    <img src="img/cd-avatar.png" alt="avatar">
+                    Account
+                </a>
+
+                <ul>
+
+                    <li><a href="#0">My Account</a></li>
+                    <li><a href="#0">Edit Account</a></li>
+                    <li><a href="#0">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header> <!-- .cd-main-header -->
+
+<main class="cd-main-content">
+    <nav class="cd-side-nav">
+        <ul>
+            <!--<li class="cd-label">Main</li>-->
+            <li class="has-children overview">
+                <a href="#0" class="space">Find Jobs</a>
+                <a href="#0">Saved Jobs</a>
+                <a href="#0">Proposals</a>
+                <a href="#0">Profile</a>
+                <a href="#0">My Stats</a>
+                <a href="#0">Tests</a>
+
+                <!--<ul>
+                    <li><a href="#0">All Data</a></li>
+                    <li><a href="#0">Category 1</a></li>
+                    <li><a href="#0">Category 2</a></li>
+                </ul>-->
+            </li>
+            <li class="has-children notifications active">
+                <a href="#0">Notifications<span class="count">3</span></a>
+
+                <!--<ul>
+                    <li><a href="#0">All Notifications</a></li>
+                    <li><a href="#0">Friends</a></li>
+                    <li><a href="#0">Other</a></li>
+                </ul>-->
+            </li>
+
+            <li class="has-children bookmarks">
+
+                <hr class="divider" color="f6f6f6">
+                <a href="#0">Go Premium</a>
+                <a href="#0">Settings</a>
+                <a href="#0">Help</a>
+
+                <hr class="divider" color="f6f6f6">
+
+
+
+
+
+                <div class="ux-progress-radial-holder">
+                    <div class="ux-progress-radial progress-20 percent-20">
+                        <div class="ux-progress-overlay"><span class="ux-progress-val" style="color:#7e7e7e">75% <br>Complete</span></div>
+                    </div>
+                </div>
+
+            </li>
+
+            <!--<li class="has-children comments">
+                <a href="#0">Comments</a>
+
+                <ul>
+                    <li><a href="#0">All Comments</a></li>
+                    <li><a href="#0">Edit Comment</a></li>
+                    <li><a href="#0">Delete Comment</a></li>
+                </ul>
+            </li>-->
+        </ul>
+
+        <!--<ul>
+            <li class="cd-label">Secondary</li>
+            <li class="has-children bookmarks">
+                <a href="#0">Bookmarks</a>
+
+                <ul>
+                    <li><a href="#0">All Bookmarks</a></li>
+                    <li><a href="#0">Edit Bookmark</a></li>
+                    <li><a href="#0">Import Bookmark</a></li>
+                </ul>
+            </li>
+            <li class="has-children images">
+                <a href="#0">Images</a>
+
+                <ul>
+                    <li><a href="#0">All Images</a></li>
+                    <li><a href="#0">Edit Image</a></li>
+                </ul>
+            </li>
+
+            <li class="has-children users">
+                <a href="#0">Users</a>
+
+                <ul>
+                    <li><a href="#0">All Users</a></li>
+                    <li><a href="#0">Edit User</a></li>
+                    <li><a href="#0">Add User</a></li>
+                </ul>
+            </li>
+        </ul>-->
+
+        <ul>
+            <!--<li class="cd-label">Action</li>-->
+            <li class="action-btn"><a href="#0">+ Complete Profile</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="content-wrapper">
+
+
+        <h1 style="text-align: center;margin-top: -30px">Create your profile</h1>
+        <div class="jumbotron" style="background-color: #FFFFFF;border: 1px solid #d3d3d3;margin-top: -50px;">
             <p class="text-muted">Your profile is your opportunity to advertise your business to clients in the marketplace. Market your services and highlight your strengths with a description of the type of work you do, your skills, work history, and education.</p>
             <p class="text-muted">Your profile must be approved, so take time to fill your profile out completely and accurately. Learn more about profiles.</p>
-            <p><a class="btn btn-success btn-lg" href="create-profile-skills.html" role="button" style="margin-top: 50px">Create My Profile</a></p>
+            <p><a class="btn btn-primary btn-lg" href="create-profile-skills.html" role="button" style="margin-top: 50px">Create My Profile</a></p>
         </div>
-    </div>
 
-</main> <!-- cd-main-content -->
 
-<nav id="cd-lateral-nav">
-    <ul class="cd-navigation">
-        <li class="item-has-children">
-            <a href="#0">Services</a>
-            <ul class="sub-menu">
-                <li><a href="#0">Brand</a></li>
-                <li><a href="#0">Web Apps</a></li>
-                <li><a href="#0">Mobile Apps</a></li>
-            </ul>
-        </li> <!-- item-has-children -->
-
-        <li class="item-has-children">
-            <a href="#0">Products</a>
-            <ul class="sub-menu">
-                <li><a href="#0">Product 1</a></li>
-                <li><a href="#0">Product 2</a></li>
-                <li><a href="#0">Product 3</a></li>
-                <li><a href="#0">Product 4</a></li>
-                <li><a href="#0">Product 5</a></li>
-            </ul>
-        </li> <!-- item-has-children -->
-
-        <li class="item-has-children">
-            <a href="#0">Stockists</a>
-            <ul class="sub-menu">
-                <li><a href="#0">London</a></li>
-                <li><a href="#0">New York</a></li>
-                <li><a href="#0">Milan</a></li>
-                <li><a href="#0">Paris</a></li>
-            </ul>
-        </li> <!-- item-has-children -->
-    </ul> <!-- cd-navigation -->
-
-    <ul class="cd-navigation cd-single-item-wrapper">
-        <li><a href="#0">Tour</a></li>
-        <li><a href="#0">Login</a></li>
-        <li><a href="#0">Register</a></li>
-        <li><a href="#0">Pricing</a></li>
-        <li><a href="#0">Support</a></li>
-    </ul> <!-- cd-single-item-wrapper -->
-
-    <ul class="cd-navigation cd-single-item-wrapper">
-        <li><a class="current" href="#0">Journal</a></li>
-        <li><a href="#0">FAQ</a></li>
-        <li><a href="#0">Terms &amp; Conditions</a></li>
-        <li><a href="#0">Careers</a></li>
-        <li><a href="#0">Students</a></li>
-    </ul> <!-- cd-single-item-wrapper -->
-
-    <div class="cd-navigation socials">
-        <a class="cd-twitter cd-img-replace" href="#0">Twitter</a>
-        <a class="cd-github cd-img-replace" href="#0">Git Hub</a>
-        <a class="cd-facebook cd-img-replace" href="#0">Facebook</a>
-        <a class="cd-google cd-img-replace" href="#0">Google Plus</a>
-    </div> <!-- socials -->
-</nav>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="Secondary-nav/js/main.js"></script> <!-- Resource jQuery -->
-
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+    </div> <!-- .content-wrapper -->
+</main> <!-- .cd-main-content -->
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/jquery.menu-aim.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
 
 </body>
 </html>
+
