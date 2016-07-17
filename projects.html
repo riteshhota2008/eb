@@ -1,27 +1,39 @@
-<!DOCTYPE html>
-<html lang="en-us" itemscope itemtype="http://schema.org/Article">
-
+<!doctype html>
+<html lang="en" class="no-js">
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=yes">-->
-	<title>Eb</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
 
-	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 
-	<!--<link rel="stylesheet" href="Secondary-nav/css/reset.css"> <!-- CSS reset -->
-	<!--<link rel="stylesheet" href="Secondary-nav/css/style.css"> <!-- Resource style -->
-	<!--<script src="Secondary-nav/js/modernizr.js"></script> <!-- Modernizr -->
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+	<title>Easily Busy | Dashboard</title>
+
+    <style>
+        @media only screen and (max-width: 768px)	{
+            .divider {
+                display: none;
+            }
+            .ux-progress-radial-holder  {
+                display: none;
+            }
+            .col-md-6 {
+                border-left: transparent;
+            }
+        }
+    </style>
 
 	<style type="text/css">
 
-		body {
-			padding-top: 30px;
-		}
 		.product {
 			margin-bottom: 30px;
 		}
@@ -32,15 +44,15 @@
 		.product img {
 			margin-bottom: 10px;
 		}
+        p,h3 {
+            font-family: 'Open Sans', sans-serif;
+        }
+
 
 	</style>
 
 	<style type="text/css">
 
-		body {
-			background: #e2e1e0;
-			text-align: center;
-		}
 
 		.card {
 			background: #fff;
@@ -50,7 +62,8 @@
 			margin: 1rem;
 			position: relative;
 			width: 100%;
-			margin-left: -1px
+			margin-left: -1px;
+
 		}
 
 		.card-1 {
@@ -81,10 +94,52 @@
 
 	</style>
 
+
+
+	<style>
+		.ux-progress-radial-holder {
+			display: inline-block;
+			margin-left: 50px;
+		}
+
+		/* @bar container */
+		.ux-progress-radial {
+			width: 90px;
+			height: 90px;
+			border-radius: 50%;
+			position: relative;
+			background-color: #62BDF1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 1px solid #fff;
+		}
+
+		/* @optional centered circle with text */
+		.ux-progress-overlay {
+
+			align-items: center;
+			justify-content: center;
+			width: 76px;
+			height: 76px;
+			background-color: #ffffff;
+			border-radius: 50%;
+			font-size: 15px;
+			font-family: Arial, sans-serif;
+			text-align: center;
+		}
+
+		.ux-progress-val {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	</style>
+
 	<style type="text/css">
 		/*Ratings*/
 
-		fieldset, label { margin: 0; padding: 0; }
+		/*fieldset, label { margin: 0; padding: 0; }
 		body{ margin: 20px; }
 		h1 { font-size: 1.5em; margin: 10px; }
 
@@ -94,7 +149,8 @@
 			border: none;
 			float: right;
 			margin-top: -35px;
-			margin-right: 30px
+			margin-right: 30px;
+            font-family: fontawesome;
 
 		}
 
@@ -102,7 +158,6 @@
 		.rating > label:before {
 			margin: 5px;
 			font-size: 1.25em;
-			font-family: FontAwesome;
 			display: inline-block;
 			content: "\f005";
 		}
@@ -129,22 +184,140 @@
 		.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
 	</style>
 </head>
-<body>
 
-<!--<header>
-	<a id="cd-logo" href="#0"><img src="Secondary-nav/img/cd-logo.svg" height="10px" alt="Homepage"></a>
-	<nav id="cd-top-nav">
+<body style="background-color: #ffffff">
+<header class="cd-main-header">
+	<a href="#0" class="cd-logo"><img src="img/cd-logo.svg" alt="Logo"></a>
+
+	<div class="cd-search is-hidden">
+		<form action="#0">
+			<input type="search" placeholder="Search... ">
+		</form>
+	</div> <!-- cd-search -->
+
+	<a href="#0" class="cd-nav-trigger"><!--Menu--><span></span></a>
+
+	<nav class="cd-nav">
+		<ul class="cd-top-nav">
+			<!--<li><a href="#0">Tour</a></li>
+            <li><a href="#0">Support</a></li>-->
+			<li class="has-children account">
+				<a href="#0">
+					<img src="img/cd-avatar.png" alt="avatar">
+					Account
+				</a>
+
+				<ul>
+
+					<li><a href="#0">My Account</a></li>
+					<li><a href="#0">Edit Account</a></li>
+					<li><a href="#0">Logout</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</header> <!-- .cd-main-header -->
+
+<main class="cd-main-content">
+	<nav class="cd-side-nav">
+		<ul>
+			<!--<li class="cd-label">Main</li>-->
+			<li class="has-children overview">
+				<a href="#0" class="space">Find Jobs</a>
+				<a href="#0">Saved Jobs</a>
+				<a href="#0">Proposals</a>
+				<a href="#0">Profile</a>
+				<a href="#0">My Stats</a>
+				<a href="#0">Tests</a>
+
+				<!--<ul>
+                    <li><a href="#0">All Data</a></li>
+                    <li><a href="#0">Category 1</a></li>
+                    <li><a href="#0">Category 2</a></li>
+                </ul>-->
+			</li>
+			<li class="has-children notifications active">
+				<a href="#0">Notifications<span class="count">3</span></a>
+
+				<!--<ul>
+                    <li><a href="#0">All Notifications</a></li>
+                    <li><a href="#0">Friends</a></li>
+                    <li><a href="#0">Other</a></li>
+                </ul>-->
+			</li>
+
+			<li class="has-children bookmarks">
+
+				<hr class="divider" color="f6f6f6">
+				<a href="#0">Go Premium</a>
+				<a href="#0">Settings</a>
+				<a href="#0">Help</a>
+
+				<hr class="divider" color="f6f6f6">
+
+
+
+
+
+				<!--<div class="ux-progress-radial-holder">
+					<div class="ux-progress-radial progress-20 percent-20">
+						<div class="ux-progress-overlay"><span class="ux-progress-val" style="color:#7e7e7e">75% <br>Complete</span></div>
+					</div>
+				</div>-->
+
+			</li>
+
+			<!--<li class="has-children comments">
+                <a href="#0">Comments</a>
+
+                <ul>
+                    <li><a href="#0">All Comments</a></li>
+                    <li><a href="#0">Edit Comment</a></li>
+                    <li><a href="#0">Delete Comment</a></li>
+                </ul>
+            </li>-->
+		</ul>
+
 		<!--<ul>
-            <li><a href="#0">Tour</a></li>
-            <li><a href="#0">Login</a></li>
-        </ul>-->
-<!--	</nav>
-	<a id="cd-menu-trigger" href="#0"><span class="cd-menu-text" >Menu</span><span class="cd-menu-icon"></span></a>
-</header>-->
-<!--<main class="cd-main-content" style="background-color: #FFFFFF">-->
+            <li class="cd-label">Secondary</li>
+            <li class="has-children bookmarks">
+                <a href="#0">Bookmarks</a>
 
-<div class="container">
-	<div class="row" id="search">
+                <ul>
+                    <li><a href="#0">All Bookmarks</a></li>
+                    <li><a href="#0">Edit Bookmark</a></li>
+                    <li><a href="#0">Import Bookmark</a></li>
+                </ul>
+            </li>
+            <li class="has-children images">
+                <a href="#0">Images</a>
+
+                <ul>
+                    <li><a href="#0">All Images</a></li>
+                    <li><a href="#0">Edit Image</a></li>
+                </ul>
+            </li>
+
+            <li class="has-children users">
+                <a href="#0">Users</a>
+
+                <ul>
+                    <li><a href="#0">All Users</a></li>
+                    <li><a href="#0">Edit User</a></li>
+                    <li><a href="#0">Add User</a></li>
+                </ul>
+            </li>
+        </ul>-->
+
+		<!--<ul>
+			<!--<li class="cd-label">Action</li>-->
+			<!--<li class="action-btn"><a href="#0">+ Complete Profile</a></li>
+		</ul>-->
+	</nav>
+
+	<div class="content-wrapper" >
+
+	<div class="row" id="search" style="margin-top: 50px">
 		<form id="search-form" action="" method="POST" enctype="multipart/form-data">
 			<div class="form-group col-xs-9">
 				<input class="form-control" type="text" placeholder="Search" />
@@ -158,34 +331,34 @@
 		<form>
 			<div class="form-group col-xs-3">
 				<select data-filter="make" class="filter-make filter form-control">
-					<option value="">Select Make</option>
+					<option value="">Type</option>
 					<option value="">Show All</option>
 				</select>
 			</div>
 			<div class="form-group col-xs-3">
 				<select data-filter="model" class="filter-model filter form-control">
-					<option value="">Select Model</option>
+					<option value="">Type</option>
 					<option value="">Show All</option>
 				</select>
 			</div>
 			<div class="form-group col-xs-3">
 				<select data-filter="type" class="filter-type filter form-control">
-					<option value="">Select Type</option>
+					<option value="">Type</option>
 					<option value="">Show All</option>
 				</select>
 			</div>
 			<div class="form-group col-xs-3">
 				<select data-filter="price" class="filter-price filter form-control">
-					<option value="">Select Price Range</option>
+					<option value="">Type</option>
 					<option value="">Show All</option>
 				</select>
 			</div>
 		</form>
 	</div>
 	<div class="row">
-		<div class="col-md-9">
+		<div class="col-md-12">
 			<div class="card card-1">
-				<h3 style="color:#00b200;text-align: left;padding-left:20px">Wordpress fix with theme and add pages and videos
+				<h3 style="color:#1a93de;text-align: left;padding-left:20px">Wordpress fix with theme and add pages and videos
 					<i class="fa fa-heart-o" aria-hidden="true" style="float:right;padding-right:20px"></i><i class="fa fa-thumbs-down" aria-hidden="true" style="float:right;padding-right:20px"></i></h3>
 				<!--<div class="page-header"></div>--><br>
 				<p class="text-muted" style="text-align: left;padding-left:20px">Hourly - Intermediate ($$) - Est. Time: Less than 1 month, 10-30 hrs/week - Posted 40 minutes ago</p>
@@ -205,7 +378,7 @@
 				</fieldset>
 			</div>
 			<div class="card card-1">
-				<h3 style="color:#00b200;text-align: left;padding-left:20px">Wordpress fix with theme and add pages and videos
+				<h3 style="color:#1a93de;text-align: left;padding-left:20px">Wordpress fix with theme and add pages and videos
 					<i class="fa fa-heart-o" aria-hidden="true" style="float:right;padding-right:20px"></i><i class="fa fa-thumbs-down" aria-hidden="true" style="float:right;padding-right:20px"></i></h3>
 				<!--<div class="page-header"></div>--><br>
 				<p class="text-muted" style="text-align: left;padding-left:20px">Hourly - Intermediate ($$) - Est. Time: Less than 1 month, 10-30 hrs/week - Posted 40 minutes ago</p>
@@ -225,7 +398,7 @@
 				</fieldset>
 			</div>
 			<div class="card card-1">
-				<h3 style="color:#00b200;text-align: left;padding-left:20px">Wordpress fix with theme and add pages and videos
+				<h3 style="color:#1a93de;text-align: left;padding-left:20px">Wordpress fix with theme and add pages and videos
 					<i class="fa fa-heart-o" aria-hidden="true" style="float:right;padding-right:20px"></i><i class="fa fa-thumbs-down" aria-hidden="true" style="float:right;padding-right:20px"></i></h3>
 				<!--<div class="page-header"></div>--><br>
 				<p class="text-muted" style="text-align: left;padding-left:20px">Hourly - Intermediate ($$) - Est. Time: Less than 1 month, 10-30 hrs/week - Posted 40 minutes ago</p>
@@ -255,64 +428,12 @@
 			<div class="card card-1"></div>
 		</div>
 	</div>
-</div>
 
-<!--</main> <!-- cd-main-content -->
-<!--<nav id="cd-lateral-nav">
-    <ul class="cd-navigation">
-        <li class="item-has-children">
-            <a href="#0">Services</a>
-            <ul class="sub-menu">
-                <li><a href="#0">Brand</a></li>
-                <li><a href="#0">Web Apps</a></li>
-                <li><a href="#0">Mobile Apps</a></li>
-            </ul>
-        </li> <!-- item-has-children -->
-<!--       <li class="item-has-children">
-            <a href="#0">Products</a>
-            <ul class="sub-menu">
-                <li><a href="#0">Product 1</a></li>
-                <li><a href="#0">Product 2</a></li>
-                <li><a href="#0">Product 3</a></li>
-                <li><a href="#0">Product 4</a></li>
-                <li><a href="#0">Product 5</a></li>
-            </ul>
-        </li> <!-- item-has-children -->
-<!--       <li class="item-has-children">
-            <a href="#0">Stockists</a>
-            <ul class="sub-menu">
-                <li><a href="#0">London</a></li>
-                <li><a href="#0">New York</a></li>
-                <li><a href="#0">Milan</a></li>
-                <li><a href="#0">Paris</a></li>
-            </ul>
-        </li> <!-- item-has-children -->
-<!--   </ul> <!-- cd-navigation -->
-<!--    <ul class="cd-navigation cd-single-item-wrapper">
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="#0">Login</a></li>
-        <li><a href="#0">Register</a></li>
-        <li><a href="#0">Pricing</a></li>
-        <li><a href="#0">Support</a></li>
-    </ul> <!-- cd-single-item-wrapper -->
-<!--    <ul class="cd-navigation cd-single-item-wrapper">
-        <li><a class="current" href="#0">Journal</a></li>
-        <li><a href="#0">FAQ</a></li>
-        <li><a href="#0">Terms &amp; Conditions</a></li>
-        <li><a href="#0">Careers</a></li>
-        <li><a href="#0">Students</a></li>
-    </ul> <!-- cd-single-item-wrapper -->
-<!--    <div class="cd-navigation socials">
-        <a class="cd-twitter cd-img-replace" href="#0">Twitter</a>
-        <a class="cd-github cd-img-replace" href="#0">Git Hub</a>
-        <a class="cd-facebook cd-img-replace" href="#0">Facebook</a>
-        <a class="cd-google cd-img-replace" href="#0">Google Plus</a>
-    </div> <!-- socials -->
-<!--</nav>
 
-<script src="Secondary-nav/js/main.js"></script> <!-- Resource jQuery -->
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
-
+	</div> <!-- .content-wrapper -->
+</main> <!-- .cd-main-content -->
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/jquery.menu-aim.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
 </body>
 </html>
