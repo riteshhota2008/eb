@@ -19,6 +19,31 @@
     <title>Easily Busy | Dashboard</title>
 
     <style>
+        p,h1,h2,label,h3,input {
+            font-family: "Open Sans", sans-serif;
+        }
+        .jumbotron {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+    </style>
+
+    <style>
+        @media only screen and (max-width: 768px)	{
+            .divider {
+                display: none;
+            }
+            .ux-progress-radial-holder  {
+                display: none;
+            }
+            .col-md-6 {
+                border-left: transparent;
+            }
+        }
+    </style>
+
+    <style>
         .ux-progress-radial-holder {
             display: inline-block;
             margin-left: 50px;
@@ -59,7 +84,6 @@
     </style>
 
     <style>
-
 
         .rad-info-box {
             margin-bottom: 16px;
@@ -105,19 +129,7 @@
 
     </style>
 
-    <style>
-        @media only screen and (max-width: 768px)	{
-            .divider {
-                display: none;
-            }
-            .ux-progress-radial-holder  {
-                display: none;
-            }
-            .col-md-6 {
-                border-left: transparent;
-            }
-        }
-    </style>
+
 </head>
 <body style="background-color: #ffffff">
 <header class="cd-main-header">
@@ -258,13 +270,13 @@
                 <div class="col-md-3" style="padding-right: 20px;">
                     <h1 style="margin-top: -50px">Ritesh Hota</h1>
                 </div>
-                <div class="col-md-6" style="border-left: 1px solid #eee;padding-left: 40px;text-align: left;margin-top: 20px">
-                    <p style="font-size: 18px">Pay Rates : <span style="color: #888d95;padding-left: 20px">$14.00 /hr</span></p>
+                <div class="col-md-6" style="border-left: 1px solid #eee;padding-left: 40px;text-align: left;margin-top: 1px">
+                    <p style="font-size: 18px;margin-top: 50px">Pay Rates : <span style="color: #888d95;padding-left: 20px">$14.00 /hr</span></p>
                     <p style="font-size: 18px">Tagline : <span style="color: #888d95;padding-left: 20px">Web Developer</span></p>
                     <p style="font-size: 18px">Location : <span style="color: #888d95;padding-left: 20px">Chennai, India</span></p>
                     <p style="font-size: 18px;">Email : <span style="color: #888d95;padding-left: 20px">riteshhota.2008@gmail.com</span></p>
                     <br>
-                    <a href="#" class="btn btn-default" style="float: right">Edit Profile</a>
+                    <a href="edit-profile.html" class="btn btn-default" style="float: right">Edit Profile</a>
                 </div>
             </div>
         </div>
