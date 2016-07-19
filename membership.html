@@ -19,16 +19,22 @@
     <title>Easily Busy | Dashboard</title>
 
     <style>
-
         p,h1,h2,label,h3,input {
             font-family: "Open Sans", sans-serif;
+
         }
         .jumbotron {
             position: relative;
             display: inline-block;
             width: 100%;
         }
-
+        .btn {
+            background: transparent;
+            color: #1a93de;
+            border-radius: 40px;
+            padding: 10px 37px;
+            margin: 10px 0 20px 60px;
+        }
     </style>
 
     <style>
@@ -42,6 +48,71 @@
             .col-md-6 {
                 border-left: transparent;
             }
+        }
+    </style>
+
+    <style>
+        /*Membership css */
+
+        .promos {
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        .promo {
+            width: 250px;
+            background: #FFFFFF;/*#0F1012*/
+            color: #333333;
+            float: left;
+            border: 1px solid #eeeeee;
+        }
+        .deal {
+            padding: 10px 0 0 0;
+        }
+        .deal span {
+            display: block;
+            text-align: center;
+        }
+        .deal span:first-of-type {
+            font-size: 23px;
+        }
+        .deal span:last-of-type {
+            font-size: 13px;
+        }
+        .promo .price {
+            display: block;
+            width: 250px;
+            background: #d3d3d3;
+            margin: 15px 0 10px 0;
+            text-align: center;
+            font-size: 23px;
+            padding: 17px 0 17px 0;
+        }
+        .promo ul {
+            display: block;
+            margin: 20px 0 10px 0;
+            padding: 0;
+            list-style-type: none;
+            text-align: center;
+            color: #888d95;
+        }
+        .promo li {
+            display: block;
+            margin: 10px 0 0 0;
+        }
+
+        .scale {
+            transform: scale(1.2);
+            box-shadow: 0 0 4px 1px rgba(20, 20, 20, 0.8);
+        }
+        .scale button {
+            background: #64AAA4;
+        }
+        .scale .price {
+            color: #64AAA4;
+        }
+        .price {
+            color: #FFFFFF;
         }
     </style>
 
@@ -264,24 +335,57 @@
     </nav>
 
     <div class="content-wrapper">
-        <h3 style="margin-top: 50px">Profile created</h3>
-        <div class="jumbotron" style="background-color: #FFFFFF;border: 1px solid #eee;margin-top: 50px;height: auto">
-            <h3>Nice work, your profile is ready for the next step.</h3>
-            <p>Your profile must be approved by our team before you can submit proposals.</p>
+        <h3 style="margin-top: 50px">Great! Now choose your membership plan.</h3>
+        <h4 class="text-muted">You can switch your membership plan any time.</h4>
+        <div class="promos" style="margin-top: 100px">
             <div class="row">
                 <div class="col-md-4">
-                    <img class="team-circle img-responsive text-center" src="http://bluelinelabs.com/images/thumb-eric.jpg" alt="Eric Kuck" width="100%" style="border-radius: 100%">
+                    <div class="promo">
+                        <div class="deal">
+                            <span>Basic</span>
+                            <span>30 connections per month</span>
+                        </div>
+                        <span class="price">Free</span>
+                        <ul class="features">
+                            <li>Choose the one on the left</li>
+                            <li>We need moneyy</li>
+                            <li>And more...</li>
+                        </ul>
+                        <button type="button" class="btn btn-default" onclick="window.location='http://rh.16mb.com/dashboard.html';">Select</button>
+                    </div>
                 </div>
-                <div class="col-md-8" >
-                    <h3 style="margin-top: 50px">Ritesh Hota</h3>
-                    <p class="text-muted">Web Developer</p>
-                    <button type="button" class="btn btn-default">Preview my full profile</button>
+                <div class="col-md-4">
+                    <div class="promo">
+                        <div class="deal">
+                            <span>Plus</span>
+                            <span>50 connections per month</span>
+                        </div>
+                        <span class="price">$7 /month</span>
+                        <ul class="features">
+                            <li>Some great feature</li>
+                            <li>Another super feature</li>
+                            <li>And more...</li>
+                        </ul>
+                        <button type="button" class="btn btn-default" onclick="window.location='http://rh.16mb.com/dashboard.html';">Select</button>
+                    </div>
                 </div>
-            </div><br><br>
-            <input type="submit" class="btn btn-primary" name="submit" value="Submit For Review" style="margin-left: 20px;background-color: #1a93de;color: #FFFFFF" onclick="window.location='http://rh.16mb.com/membership.html';"/>
-            <button type="button" class="btn btn-default" style="border: none;margin-left: 20px">Save as a Draft</button>
+                <div class="col-md-4">
+                    <div class="promo">
+                        <div class="deal">
+                            <span>Premium</span>
+                            <span>70 connections per month</span>
+                        </div>
+                        <span class="price">$14 /month</span>
+                        <ul class="features">
+                            <li>Some great feature</li>
+                            <li>Another super feature</li>
+                            <li>And more...</li>
+                        </ul>
+                        <button type="button" class="btn btn-default" onclick="window.location='http://rh.16mb.com/dashboard.html';">Select</button>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </div> <!-- .content-wrapper -->
 </main> <!-- .cd-main-content -->
 <script src="js/jquery-2.1.4.js"></script>
