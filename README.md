@@ -1,4 +1,4 @@
-# Eb - EasilyBusy
+# Eb
 
 https://codepen.io/sdthornton/pen/wBZdXq
 
